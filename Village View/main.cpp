@@ -20,14 +20,17 @@ GLfloat position = 0.0f;
 GLfloat positionR = 0.0f;
 GLfloat positionB = 0.0f;
 GLfloat positionC = 0.0f;
-GLfloat speed = -0.2f;
-GLfloat speedR = -0.2f;
-GLfloat speedB = -0.2f;
-GLfloat speedC = 0.2f;
+GLfloat speed = -0.5f;
+GLfloat speedR = -0.5f;
+GLfloat speedB = -0.9f;
+GLfloat speedC = 1.5f;
 
 void BoatMove(int value) {
 
     positionB += speedB;
+
+    if(positionB > 550)
+        positionB = -200;
 
 	glutPostRedisplay();
 
@@ -41,11 +44,12 @@ void WhiteMan(int value) {
         //position = -1.2f;
 
     position += speed;
-
-	glutPostRedisplay();
-
+    if(position < -210)
+        position = -210;
+    //glutPostRedisplay();
 
 	glutTimerFunc(100, WhiteMan, 0);
+	glutPostRedisplay();
 
 }
 
@@ -56,6 +60,10 @@ void RedMan(int value) {
 
     positionR += speedR;
 
+    if(positionR < -201)
+        positionR = -201;
+    //glutPostRedisplay();
+
 	glutPostRedisplay();
 
 
@@ -64,11 +72,12 @@ void RedMan(int value) {
 }
 
 void CART(int value) {
-
     //if(position > 1.0)
         //position = -1.2f;
 
     positionC += speedC;
+    if(positionC > 700)
+        positionC = -50 ;
 
 	glutPostRedisplay();
 
