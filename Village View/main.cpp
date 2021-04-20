@@ -20,10 +20,27 @@ GLfloat position = 0.0f;
 GLfloat positionR = 0.0f;
 GLfloat positionB = 0.0f;
 GLfloat positionC = 0.0f;
+GLfloat positionK = 10.0f;
 GLfloat speed = -0.5f;
 GLfloat speedR = -0.5f;
 GLfloat speedB = -0.9f;
 GLfloat speedC = 1.5f;
+GLfloat speedK = 0.8f;
+
+void BirdMove(int value) {
+
+    //if(position > 1.0)
+        //position = -1.2f;
+
+    positionK += speedK;
+    if(positionK > 700)
+        positionK = -50;
+    //glutPostRedisplay();
+
+	glutTimerFunc(100, BirdMove, 0);
+	glutPostRedisplay();
+
+}
 
 void BoatMove(int value) {
 
@@ -2429,10 +2446,83 @@ glTranslatef(positionC,0.0f, 0.0f);
 
 	glPopMatrix();
 
+}
+
+void Bird()
+{
+    glPushMatrix();
+    glTranslatef(positionK,0.0f, 0.0f);
+
+    glColor3ub (230, 230, 0);
+    glBegin(GL_POLYGON);
+    glVertex2i(32, 408);
+    glVertex2i(45, 393);
+    glVertex2i(51, 393);
+    glVertex2i(55, 400);
+    glVertex2i(60, 401);
+    glVertex2i(54, 406);
+    glVertex2i(53, 406);
+    glVertex2i(52, 399);
+    glVertex2i(51, 399);
+    glVertex2i(46, 412);
+    glVertex2i(32, 410);
+    glVertex2i(44, 409);
+    glVertex2i(47, 407);
+    glVertex2i(48, 405);
+    glVertex2i(46, 405);
+    //glVertex2i(40, 403);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glVertex2i(25, 400);
+    glVertex2i(45, 393);
+    glVertex2i(40, 400);
+    glEnd();
+
+    glColor3ub (0,0,0);//Bird's Eye
+    glBegin(GL_LINES);
+    glVertex2i(54, 403);
+    glVertex2i(53, 403);
+    glEnd();
+
+
+    glColor3ub (102, 255, 51);
+    glBegin(GL_POLYGON);
+    glVertex2i(02, 398);
+    glVertex2i(15, 383);
+    glVertex2i(21, 383);
+    glVertex2i(25, 390);
+    glVertex2i(30, 391);
+    glVertex2i(24, 396);
+    glVertex2i(23, 396);
+    glVertex2i(22, 389);
+    glVertex2i(21, 389);
+    glVertex2i(16, 402);
+    glVertex2i(2, 400);
+    glVertex2i(14, 399);
+    glVertex2i(17, 397);
+    glVertex2i(18, 395);
+    glVertex2i(16, 395);
+    //glVertex2i(40, 403);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glVertex2i(-5, 390);
+    glVertex2i(15, 383);
+    glVertex2i(10, 390);
+    glEnd();
+
+    glColor3ub (0,0,0);//Bird's Eye
+    glBegin(GL_LINES);
+    glVertex2i(24, 393);
+    glVertex2i(23, 393);
+    glEnd();
 
 
 
+    glPopMatrix();
 
+    glFlush ();
 }
 
 void update(int value) {
@@ -2556,6 +2646,7 @@ void display()
     Human();
     Human2();
     Cart();
+    Bird();
 
 
 
@@ -2612,6 +2703,13 @@ case 'y':   //c FOR CONTINUE MOVING CART
     break;
 case 'u':   //u FOR STOP MOVING CART
     speedC = 0.0f;
+    break;
+case 'k':   //u FOR STOP MOVING Bird
+    speedK = 0.0f;
+    break;
+case 'l':
+    speedK += 2;
+    glutPostRedisplay();
     break;
 case 'r':
         rainday = true;
@@ -2688,6 +2786,7 @@ int main(int argc,char **argv)
         glutTimerFunc(1000, RedMan, 0);
         glutTimerFunc(1000, BoatMove, 0);
         glutTimerFunc(100, CART, 0);
+        glutTimerFunc(100, BirdMove, 0);
 
 	glutTimerFunc(25, update, 0);
 	myInit();
