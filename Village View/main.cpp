@@ -129,6 +129,301 @@ void drawstring(float x,float y,float z,char *string)
 		glutBitmapCharacter(currentfont,*c);
 	}
 }
+
+void BackVillage()
+{
+    glClear (GL_COLOR_BUFFER_BIT);
+    //Back village
+    glColor3ub (0, 153, 0);//land
+    glBegin(GL_POLYGON);
+    glVertex2i(0, 280);
+    glVertex2i(400, 280);
+    glVertex2i(390, 285);
+    glVertex2i(385, 290);
+    glVertex2i(0, 290);
+    glEnd();
+    glColor3ub (255, 83, 26);//House
+    glBegin(GL_QUADS);
+    glVertex2i(148, 290);
+    glVertex2i(162, 290);
+    glVertex2i(162, 295);
+    glVertex2i(148, 295);
+    glEnd();
+    glColor3ub (153, 51, 0);//House top
+    glBegin(GL_QUADS);
+    glVertex2i(145, 295);
+    glVertex2i(165, 295);
+    glVertex2i(160, 305);
+    glVertex2i(150, 305);
+    glEnd();
+
+    glColor3ub (255, 83, 26);//2nd house House
+    glBegin(GL_QUADS);
+    glVertex2i(178, 290);
+    glVertex2i(192, 290);
+    glVertex2i(192, 295);
+    glVertex2i(178, 295);
+    glEnd();
+    glColor3ub (102, 51, 0);//House top
+    glBegin(GL_QUADS);
+    glVertex2i(175, 295);
+    glVertex2i(195, 295);
+    glVertex2i(190, 305);
+    glVertex2i(180, 305);
+    glEnd();
+
+     glColor3ub (255, 163, 26);//3rd house House
+    glBegin(GL_QUADS);
+    glVertex2i(245, 290);
+    glVertex2i(255, 290);
+    glVertex2i(255, 295);
+    glVertex2i(245, 295);
+    glEnd();
+    glColor3ub (102, 51, 0);//House top
+    glBegin(GL_QUADS);
+    glVertex2i(242, 295);
+    glVertex2i(258, 295);
+    glVertex2i(252, 305);
+    glVertex2i(248, 305);
+    glEnd();
+    glColor3ub (255, 163, 26);//4th house House
+    glBegin(GL_QUADS);
+    glVertex2i(295, 290);
+    glVertex2i(305, 290);
+    glVertex2i(305, 295);
+    glVertex2i(295, 295);
+    glEnd();
+    glColor3ub (153, 51, 51);//House top
+    glBegin(GL_QUADS);
+    glVertex2i(292, 295);
+    glVertex2i(308, 295);
+    glVertex2i(302, 305);
+    glVertex2i(298, 305);
+    glEnd();
+    glColor3ub (230, 57, 0);//5th house House
+    glBegin(GL_QUADS);
+    glVertex2i(315, 290);
+    glVertex2i(325, 290);
+    glVertex2i(325, 295);
+    glVertex2i(315, 295);
+    glEnd();
+    glColor3ub (102, 0, 34);//House top
+    glBegin(GL_QUADS);
+    glVertex2i(312, 295);
+    glVertex2i(328, 295);
+    glVertex2i(322, 305);
+    glVertex2i(318, 305);
+    glEnd();
+    glColor3ub (255, 163, 26);//6th house House
+    glBegin(GL_QUADS);
+    glVertex2i(68, 290);
+    glVertex2i(82, 290);
+    glVertex2i(82, 295);
+    glVertex2i(68, 295);
+    glEnd();
+    glColor3ub (153, 51, 51);//House top
+    glBegin(GL_QUADS);
+    glVertex2i(65, 295);
+    glVertex2i(85, 295);
+    glVertex2i(80, 305);
+    glVertex2i(70, 305);
+    glEnd();
+    //////////////////////tree 1st(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(208, 290);
+    glVertex2i(208, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(204, 300);
+    glVertex2i(212, 300);
+    glVertex2i(208, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(204, 297);
+    glVertex2i(212, 297);
+    glVertex2i(208, 310);
+    glEnd();
+
+     //////////////////////tree 2nd(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(218, 290);
+    glVertex2i(218, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(214, 300);
+    glVertex2i(222, 300);
+    glVertex2i(218, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(214, 297);
+    glVertex2i(222, 297);
+    glVertex2i(218, 310);
+    glEnd();
+    //////////////////////tree 3nd(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(228, 290);
+    glVertex2i(228, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(224, 300);
+    glVertex2i(232, 300);
+    glVertex2i(228, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(224, 297);
+    glVertex2i(232, 297);
+    glVertex2i(228, 310);
+    glEnd();
+    //////////////////////tree 4th(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(268, 290);
+    glVertex2i(268, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(264, 300);
+    glVertex2i(272, 300);
+    glVertex2i(268, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(264, 297);
+    glVertex2i(272, 297);
+    glVertex2i(268, 310);
+    glEnd();
+    //////////////////////tree 5th(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(278, 290);
+    glVertex2i(278, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(274, 300);
+    glVertex2i(282, 300);
+    glVertex2i(278, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(274, 297);
+    glVertex2i(282, 297);
+    glVertex2i(278, 310);
+    glEnd();
+    //////////////////////tree 6th(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(338, 290);
+    glVertex2i(338, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(334, 300);
+    glVertex2i(342, 300);
+    glVertex2i(338, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(334, 297);
+    glVertex2i(342, 297);
+    glVertex2i(338, 310);
+    glEnd();
+    //////////////////////tree 7th(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(348, 290);
+    glVertex2i(348, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(344, 300);
+    glVertex2i(352, 300);
+    glVertex2i(348, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(344, 297);
+    glVertex2i(352, 297);
+    glVertex2i(348, 310);
+    glEnd();
+     //////////////////////tree 8th(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(138, 290);
+    glVertex2i(138, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(134, 300);
+    glVertex2i(142, 300);
+    glVertex2i(138, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(134, 297);
+    glVertex2i(142, 297);
+    glVertex2i(138, 310);
+    glEnd();
+     //////////////////////tree 9th(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(128, 290);
+    glVertex2i(128, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(124, 300);
+    glVertex2i(132, 300);
+    glVertex2i(128, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(124, 297);
+    glVertex2i(132, 297);
+    glVertex2i(128, 310);
+    glEnd();
+    //////////////////////tree 10th(from left)
+    glColor3ub (148, 124, 84);
+    glLineWidth(4);
+    glBegin(GL_LINES);
+    glVertex2i(90, 290);
+    glVertex2i(90, 300);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(86, 300);
+    glVertex2i(94, 300);
+    glVertex2i(90, 310);
+    glEnd();
+    glColor3ub (51, 204, 51);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(86, 297);
+    glVertex2i(94, 297);
+    glVertex2i(90, 310);
+    glEnd();
+    glFlush();
+
+
+}
+
 void Boat()
 {
 //BOAT
@@ -2629,7 +2924,9 @@ void controlsScreen()
 }
 void display()
 {
+    BackVillage();
     river();
+    //BackVillage();
     Boat();
     Boat2();
     //grass();
