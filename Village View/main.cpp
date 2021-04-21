@@ -11,7 +11,7 @@ using namespace std;
 
 float _rain = 0.0;
 float _nt = 0.0;
-bool rainday = false;
+bool rain = false;
 bool night = false;
 float _run3 = 0.0;
 int flag=0;
@@ -2832,6 +2832,42 @@ void update(int value) {
 	glutPostRedisplay(); //Tell GLUT that the display has changed
 	glutTimerFunc(25, update, 0);
 }
+void rainf()
+{
+    int x=0;
+    int y=778;
+    static float a=-760.0f;
+    if(a<=-768)
+    {
+         a=-760.0f;
+
+    }
+    else
+    {
+        a-=0.5f;
+        //glColor3ub(r,g,b);
+    }
+    glColor3ub(255,255,255);
+    glPushMatrix();
+    glTranslatef(0.0f,a,0.0f);
+    glBegin(GL_LINES);
+    for(int i=500;i>=0;i--)
+    {
+        for(int j=0;j<=i;j++)
+        {
+            glVertex3i(x,y,0);
+            glVertex3i(x+3,y+10,0);
+            x+=rand()%1050;
+        }
+        y+=rand()%15;
+        x=0;
+
+    }
+    glEnd();
+    glPopMatrix();
+    glutPostRedisplay();
+
+}
 void Night(int value){
 
 if(night){
@@ -2840,32 +2876,11 @@ if(night){
     glFlush();
 	glutPostRedisplay();
 }
-}
-void Rain(int value){
-
-if(rainday){
-
-    _rain += 0.01f;
-
-    glBegin(GL_POINTS);
-    for(int i=1;i<=1000;i++)
-    {
-        int x=rand(),y=rand();
-        x%=1000; y%=1000;
-        glBegin(GL_LINES);
-        glColor3f(1.0, 1.0, 1.0);
-        glVertex2d(x,y);
-        glVertex2d(x+5,y+5);
-        glEnd();
+if(rain){
+        rainf();
     }
-
-	glutPostRedisplay();
-	glutTimerFunc(5, Rain, 0);
-
-    glFlush();
-
 }
-}
+
 
 void startscreen(void)
 {
@@ -2918,7 +2933,7 @@ void controlsScreen()
     glColor3f(1.000, 0.980, 0.941);
     drawstring(125.0,260.0,0.0,"NO RAIN");
     glColor3f(1.000, 0.980, 0.941);
-    drawstring(300.0,260.0,0.0,"PRESS 'E'");
+    drawstring(300.0,260.0,0.0,"PRESS 'T'");
     drawstring(180.0,100.0,0.0,"NOW PRESS ENTER");
     glFlush();
 }
@@ -2964,6 +2979,10 @@ void myDisplay()
         //controlsScreen();
     if(flag>1)
         display();
+    if(rain){
+        rainf();
+    }
+
 
     glFlush();
     glutSwapBuffers();
@@ -3009,14 +3028,13 @@ case 'l':
     glutPostRedisplay();
     break;
 case 'r':
-        rainday = true;
-        Rain(_rain);
+        rain = true;
         sndPlaySound("Rain.wav",SND_ASYNC|SND_LOOP);
         sndPlaySound("Rain.wav",SND_MEMORY|SND_ASYNC);
         break;
 
 case 't':
-        rainday = false;
+        rain = false;
 		sndPlaySound(NULL,SND_ASYNC);
         break;
 
@@ -3068,11 +3086,11 @@ glutPostRedisplay();
 int main(int argc,char **argv)
 {
     cout<<"rain start = r"<<endl;
-    cout<<"rain stop = e"<<endl;
+    cout<<"rain stop = t"<<endl;
     cout<<"night = n"<<endl;
     cout<<"day = b"<<endl;
     glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE| GLUT_RGB | GLUT_DEPTH);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(1200, 600);
 	glutCreateWindow("Natural View Of A Village");     // creating the window
 	//glutFullScreen();       // making the window full screen
