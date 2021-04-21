@@ -3072,7 +3072,7 @@ int main(int argc,char **argv)
     cout<<"night = n"<<endl;
     cout<<"day = b"<<endl;
     glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB | GLUT_DEPTH);
+	glutInitDisplayMode(GLUT_DOUBLE| GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(1200, 600);
 	glutCreateWindow("Natural View Of A Village");     // creating the window
 	//glutFullScreen();       // making the window full screen
