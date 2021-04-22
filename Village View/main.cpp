@@ -21,87 +21,15 @@ GLfloat positionR = 0.0f;
 GLfloat positionB = 0.0f;
 GLfloat positionC = 0.0f;
 GLfloat positionK = 10.0f;
+GLfloat positionT = 10.0f;
 GLfloat speed = -0.5f;
 GLfloat speedR = -0.5f;
 GLfloat speedB = -0.9f;
 GLfloat speedC = 1.5f;
 GLfloat speedK = 0.8f;
-
-void BirdMove(int value) {
-
-    //if(position > 1.0)
-        //position = -1.2f;
-
-    positionK += speedK;
-    if(positionK > 700)
-        positionK = -50;
-    //glutPostRedisplay();
-
-	glutTimerFunc(100, BirdMove, 0);
-	glutPostRedisplay();
-
-}
-
-void BoatMove(int value) {
-
-    positionB += speedB;
-
-    if(positionB > 550)
-        positionB = -200;
-
-	glutPostRedisplay();
+GLfloat speedT = 0.8f;
 
 
-	glutTimerFunc(100, BoatMove, 0);
-}
-
-void WhiteMan(int value) {
-
-    //if(position > 1.0)
-        //position = -1.2f;
-
-    position += speed;
-    if(position < -210)
-        position = -210;
-    //glutPostRedisplay();
-
-	glutTimerFunc(100, WhiteMan, 0);
-	glutPostRedisplay();
-
-}
-
-void RedMan(int value) {
-
-    //if(position > 1.0)
-        //position = -1.2f;
-
-    positionR += speedR;
-
-    if(positionR < -201)
-        positionR = -201;
-    //glutPostRedisplay();
-
-	glutPostRedisplay();
-
-
-	glutTimerFunc(100, RedMan, 0);
-
-}
-
-void CART(int value) {
-    //if(position > 1.0)
-        //position = -1.2f;
-
-    positionC += speedC;
-    if(positionC > 700)
-        positionC = -50 ;
-
-	glutPostRedisplay();
-
-
-	glutTimerFunc(100, CART, 0);
-
-}
 
 void myInit (void)
 {
@@ -132,7 +60,7 @@ void drawstring(float x,float y,float z,char *string)
 
 void BackVillage()
 {
-    glClear (GL_COLOR_BUFFER_BIT);
+    //glClear (GL_COLOR_BUFFER_BIT);
     //Back village
     glColor3ub (0, 153, 0);//land
     glBegin(GL_POLYGON);
@@ -229,7 +157,7 @@ void BackVillage()
     glVertex2i(70, 305);
     glEnd();
     //////////////////////tree 1st(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(208, 290);
@@ -249,7 +177,7 @@ void BackVillage()
     glEnd();
 
      //////////////////////tree 2nd(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(218, 290);
@@ -268,7 +196,7 @@ void BackVillage()
     glVertex2i(218, 310);
     glEnd();
     //////////////////////tree 3nd(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(228, 290);
@@ -287,7 +215,7 @@ void BackVillage()
     glVertex2i(228, 310);
     glEnd();
     //////////////////////tree 4th(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(268, 290);
@@ -306,7 +234,7 @@ void BackVillage()
     glVertex2i(268, 310);
     glEnd();
     //////////////////////tree 5th(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(278, 290);
@@ -325,7 +253,7 @@ void BackVillage()
     glVertex2i(278, 310);
     glEnd();
     //////////////////////tree 6th(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(338, 290);
@@ -344,7 +272,7 @@ void BackVillage()
     glVertex2i(338, 310);
     glEnd();
     //////////////////////tree 7th(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(348, 290);
@@ -363,7 +291,7 @@ void BackVillage()
     glVertex2i(348, 310);
     glEnd();
      //////////////////////tree 8th(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(138, 290);
@@ -382,7 +310,7 @@ void BackVillage()
     glVertex2i(138, 310);
     glEnd();
      //////////////////////tree 9th(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(128, 290);
@@ -401,7 +329,7 @@ void BackVillage()
     glVertex2i(128, 310);
     glEnd();
     //////////////////////tree 10th(from left)
-    glColor3ub (148, 124, 84);
+    glColor3ub (134, 45, 45);
     glLineWidth(4);
     glBegin(GL_LINES);
     glVertex2i(90, 290);
@@ -1670,10 +1598,8 @@ glColor3ub (204, 153, 0);
 
 }
 void house(){
-//////////////////////////////////////////////////////////////////////////////left house
-//left triangle
 
-    glColor3ub (181, 158, 90);
+    glColor3ub (153, 51, 51);
     glBegin(GL_TRIANGLES);
     glVertex2i(50, 200);
     glVertex2i(90, 200);
@@ -1688,7 +1614,6 @@ void house(){
     glVertex2i(70, 250);
     glVertex2i(50, 200);
 
-    //glVertex2i(50, 200);
     glEnd();
     //////////////line of chal
     glLineWidth(2);
@@ -1696,12 +1621,10 @@ void house(){
     glBegin(GL_LINES);
     glVertex2i(55, 200);
     glVertex2i(75, 250);
-        //glVertex2i(70, 250);
-    //glVertex2i(70, 200);
 
     glEnd();
     ///////////////////right  chal
-    glColor3ub (219, 183, 72);
+    glColor3ub (172, 57, 57);
     glBegin(GL_QUADS);
     glVertex2i(90, 200);
     glVertex2i(170, 200);
@@ -1720,7 +1643,7 @@ void house(){
 
     //glFlush ();
     ////////////////// left body
-    glColor3ub (153, 153, 153);
+    glColor3ub (163, 163, 117);
     glBegin(GL_QUADS);
     glVertex2i(55, 150);
     glVertex2i(90, 150);
@@ -1740,7 +1663,7 @@ void house(){
 
 
     ///////////right body
-    glColor3ub (180, 180, 180);
+    glColor3ub (173, 173, 133);
     glBegin(GL_QUADS);
     glVertex2i(90, 150);
     glVertex2i(165, 150);
@@ -2388,316 +2311,316 @@ glFlush();
 void Cart()
 {
      ///////////////////////////////////////////road
-    glColor3ub (87, 81, 92);
-    glBegin(GL_QUADS);
-    glVertex2i(0, 0);
-    glVertex2i(640, 0);
-    glVertex2i(640, 50);
-    glVertex2i(0, 50);
-    glEnd();
+        glColor3ub (87, 81, 92);
+        glBegin(GL_QUADS);
+        glVertex2i(0, 0);
+        glVertex2i(640, 0);
+        glVertex2i(640, 50);
+        glVertex2i(0, 50);
+        glEnd();
 
-        glColor3ub (0, 0, 0);
-    glLineWidth(2);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(0, 0);
-    glVertex2i(640, 0);
-    glVertex2i(640, 50);
-    glVertex2i(0, 50);
-    glVertex2i(0, 0);
+            glColor3ub (0, 0, 0);
+        glLineWidth(2);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(0, 0);
+        glVertex2i(640, 0);
+        glVertex2i(640, 50);
+        glVertex2i(0, 50);
+        glVertex2i(0, 0);
 
-    glEnd();
-    glFlush();
-    //////////////////////////////////////roads i-land
-    glColor3ub (153, 153, 102);
-    glBegin(GL_QUADS);
-    glVertex2i(0, 50);
-    glVertex2i(640, 50);
-    glVertex2i(640, 60);
-    glVertex2i(0, 60);
-    glEnd();
-    /////////////////////////////////road er majher daag
-    glColor3ub (252, 252, 252);
-    //glLineWidth(20.0f);
-    glBegin(GL_LINES);
-    glVertex2i(0, 25);
-    glVertex2i(40, 25);
-    glVertex2i(50, 25);
-    glVertex2i(90, 25);
-    glVertex2i(100, 25);
-    glVertex2i(140, 25);
-    glVertex2i(150, 25);
-    glVertex2i(190, 25);
-    glVertex2i(200, 25);
-    glVertex2i(240, 25);
-    glVertex2i(250, 25);
-    glVertex2i(290, 25);
-    glVertex2i(300, 25);
-    glVertex2i(340, 25);
-    glVertex2i(350, 25);
-    glVertex2i(390, 25);
-    glVertex2i(400, 25);
-    glVertex2i(440, 25);
-    glVertex2i(450, 25);
-    glVertex2i(490, 25);
-    glVertex2i(500, 25);
-    glVertex2i(540, 25);
-    glVertex2i(550, 25);
-    glVertex2i(590, 25);
-    glVertex2i(600, 25);
-    glVertex2i(640, 25);
-    glEnd();
+        glEnd();
+        glFlush();
+        //////////////////////////////////////roads i-land
+        glColor3ub (153, 153, 102);
+        glBegin(GL_QUADS);
+        glVertex2i(0, 50);
+        glVertex2i(640, 50);
+        glVertex2i(640, 60);
+        glVertex2i(0, 60);
+        glEnd();
+        /////////////////////////////////road er majher daag
+        glColor3ub (252, 252, 252);
+        //glLineWidth(20.0f);
+        glBegin(GL_LINES);
+        glVertex2i(0, 25);
+        glVertex2i(40, 25);
+        glVertex2i(50, 25);
+        glVertex2i(90, 25);
+        glVertex2i(100, 25);
+        glVertex2i(140, 25);
+        glVertex2i(150, 25);
+        glVertex2i(190, 25);
+        glVertex2i(200, 25);
+        glVertex2i(240, 25);
+        glVertex2i(250, 25);
+        glVertex2i(290, 25);
+        glVertex2i(300, 25);
+        glVertex2i(340, 25);
+        glVertex2i(350, 25);
+        glVertex2i(390, 25);
+        glVertex2i(400, 25);
+        glVertex2i(440, 25);
+        glVertex2i(450, 25);
+        glVertex2i(490, 25);
+        glVertex2i(500, 25);
+        glVertex2i(540, 25);
+        glVertex2i(550, 25);
+        glVertex2i(590, 25);
+        glVertex2i(600, 25);
+        glVertex2i(640, 25);
+        glEnd();
 
 glPopMatrix();
 
  glPushMatrix();
 
  //CART
-glTranslatef(positionC,0.0f, 0.0f);
-    glColor3ub (225, 245, 93);
-    glBegin(GL_QUADS);
-    glVertex2i(50, 50);
-    glVertex2i(120, 50);
-    glVertex2i(120, 100);
-    glVertex2i(50, 100);
-    glEnd();
+    glTranslatef(positionC,0.0f, 0.0f);
+        glColor3ub (225, 245, 93);
+        glBegin(GL_QUADS);
+        glVertex2i(50, 50);
+        glVertex2i(120, 50);
+        glVertex2i(120, 100);
+        glVertex2i(50, 100);
+        glEnd();
 
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(50, 50);
-    glVertex2i(120, 50);
-    glVertex2i(120, 100);
-    glVertex2i(50, 100);
-    glVertex2i(50, 50);
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(50, 50);
+        glVertex2i(120, 50);
+        glVertex2i(120, 100);
+        glVertex2i(50, 100);
+        glVertex2i(50, 50);
 
-    glColor3ub (225,0,225);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(50, 66.66);
-    glVertex2i(120, 66.66);
-    glEnd();
+        glColor3ub (225,0,225);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(50, 66.66);
+        glVertex2i(120, 66.66);
+        glEnd();
 
-    glColor3ub (225,0,225);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(67.5, 50);
-    glVertex2i(67.5, 100);
-    glEnd();
+        glColor3ub (225,0,225);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(67.5, 50);
+        glVertex2i(67.5, 100);
+        glEnd();
 
-    glColor3ub (225,0,225);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(85, 50);
-    glVertex2i(85, 100);
-    glEnd();
+        glColor3ub (225,0,225);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(85, 50);
+        glVertex2i(85, 100);
+        glEnd();
 
-    glColor3ub (225,0,225);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(102.5, 50);
-    glVertex2i(102.5, 100);
+        glColor3ub (225,0,225);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(102.5, 50);
+        glVertex2i(102.5, 100);
 
-    glEnd();
-
-
-    glColor3ub (225,0,225);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(50, 83.32);
-    glVertex2i(120, 83.32);
-    glEnd();
+        glEnd();
 
 
-
-//LINES
-    glColor3ub (0,0,225);
-    glBegin(GL_QUAD_STRIP);
-    glVertex2i(50, 50);
-    glVertex2i(180, 50);
-    glVertex2i(50, 45);
-    glVertex2i(180, 45);
-    glEnd();
-
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(50, 50);
-    glVertex2i(180, 50);
-    glVertex2i(180, 45);
-    glVertex2i(50, 45);
-    glVertex2i(50, 50);
-    glEnd();
-
-
- //cow
+        glColor3ub (225,0,225);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(50, 83.32);
+        glVertex2i(120, 83.32);
+        glEnd();
 
 
 
-    glColor3ub (0,0,0);//COW HORN
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(176, 50);
-    glVertex2i(171, 60);
-    glEnd();
+    //LINES
+        glColor3ub (0,0,225);
+        glBegin(GL_QUAD_STRIP);
+        glVertex2i(50, 50);
+        glVertex2i(180, 50);
+        glVertex2i(50, 45);
+        glVertex2i(180, 45);
+        glEnd();
 
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(178, 50);
-    glVertex2i(183, 60);
-    glEnd();
-
-
-    glColor3ub (153,76,0);//COW HORN
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(177, 50);
-    glVertex2i(172, 60);
-    glEnd();
-
-    glColor3ub (153,76,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(179, 50);
-    glVertex2i(184, 60);
-    glEnd();
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(50, 50);
+        glVertex2i(180, 50);
+        glVertex2i(180, 45);
+        glVertex2i(50, 45);
+        glVertex2i(50, 50);
+        glEnd();
 
 
-      glColor3ub (153,76,0);
-    glBegin(GL_POLYGON);
-    glVertex2i(180, 50);
-    glVertex2i(190, 35);
-    glVertex2i(187, 33);
-    glVertex2i(177, 35);
-    glVertex2i(172, 20);
-    glVertex2i(172, 15);
-    glVertex2i(168, 15);
-    glVertex2i(168, 28);
-    glVertex2i(168, 20);
-    glVertex2i(135, 20);
-    glVertex2i(135, 28);
-    glVertex2i(131, 15);
-    glVertex2i(131, 45);
-    glVertex2i(135, 50);
-
-    glEnd();
-
-//kadh
-    glColor3ub (153,76,0);
-    glBegin(GL_POLYGON);
-    glVertex2i(165, 50);
-    glVertex2i(170, 54);
-    glVertex2i(173, 54);
-    glVertex2i(173, 50);
-    glVertex2i(180, 50);
-
-    glEnd();
+     //cow
 
 
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(135, 50);
-    glVertex2i(165, 50);
-    glVertex2i(170, 54);
-    glVertex2i(173, 54);
-    glVertex2i(173, 50);
-    glVertex2i(180, 50);
-    glEnd();
 
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(180, 50);
-    glVertex2i(190, 35);
-    glVertex2i(187, 33);
-    glVertex2i(177, 35);
-    glVertex2i(172, 20);
-    glVertex2i(172, 15);
-    glVertex2i(168, 15);
-    glVertex2i(168, 28);
-    glVertex2i(168, 20);
-    glVertex2i(135, 20);
-    glVertex2i(135, 28);
-    glVertex2i(135, 15);
-    glVertex2i(131, 15);
-    glVertex2i(131, 45);
-    glVertex2i(135, 50);
+        glColor3ub (0,0,0);//COW HORN
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(176, 50);
+        glVertex2i(171, 60);
+        glEnd();
 
-    glEnd();
-
-    //man IN CART
-    glColor3ub (0,0,0);//HAIR
-    glBegin(GL_QUADS);
-    glVertex2i(125, 80);
-    glVertex2i(137, 80);
-    glVertex2i(137, 76);
-    glVertex2i(125, 76);
-    glEnd();
-
-    //HEAD
-    glColor3ub (255,201,105);
-    glBegin(GL_POLYGON);
-    glVertex2i(137, 76);
-    glVertex2i(137, 72);
-    glVertex2i(140, 70);
-    glVertex2i(136, 68);
-    glVertex2i(135, 64);
-    glVertex2i(128, 64);
-    glVertex2i(125, 67);
-    glVertex2i(125, 76);
-    glEnd();
-
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-   glVertex2i(137, 76);
-    glVertex2i(137, 72);
-    glVertex2i(140, 70);
-    glVertex2i(136, 68);
-    glVertex2i(135, 64);
-    glVertex2i(128, 64);
-    glVertex2i(125, 67);
-    glVertex2i(125, 76);
-    glVertex2i(137, 76);
-    glEnd();
-
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(135, 64);
-    glVertex2i(135, 61);
-    glVertex2i(128, 61);
-    glVertex2i(128, 64);
-    glEnd();
-
-    glColor3ub (0,255,0);
-    glBegin(GL_POLYGON);
-    glVertex2i(135, 64);
-    glVertex2i(135, 61);
-    glVertex2i(128, 61);
-    glVertex2i(128, 64);
-
-    glEnd();
-
-//BODY
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(125, 61);
-    glVertex2i(138, 61);
-    glVertex2i(138, 50);
-    glVertex2i(125, 50);
-    glVertex2i(125, 61);
-    glEnd();
-
-    glColor3ub (229,106,118);
-    glBegin(GL_POLYGON);
-    glVertex2i(125, 61);
-    glVertex2i(138, 61);
-    glVertex2i(138, 50);
-    glVertex2i(125, 50);
-    glVertex2i(125, 61);
-
-    glEnd();
-
-    //HANDS
-    glColor3ub (0,0,0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(138, 57);
-    glVertex2i(145, 50);
-    glVertex2i(138, 55);
-
-    glEnd();
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(178, 50);
+        glVertex2i(183, 60);
+        glEnd();
 
 
-    glTranslatef(43, 15, 0.0);
-    glTranslatef(43, 15, 0.0);
-    glBegin(GL_POLYGON);
+        glColor3ub (153,76,0);//COW HORN
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(177, 50);
+        glVertex2i(172, 60);
+        glEnd();
+
+        glColor3ub (153,76,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(179, 50);
+        glVertex2i(184, 60);
+        glEnd();
+
+
+          glColor3ub (153,76,0);
+        glBegin(GL_POLYGON);
+        glVertex2i(180, 50);
+        glVertex2i(190, 35);
+        glVertex2i(187, 33);
+        glVertex2i(177, 35);
+        glVertex2i(172, 20);
+        glVertex2i(172, 15);
+        glVertex2i(168, 15);
+        glVertex2i(168, 28);
+        glVertex2i(168, 20);
+        glVertex2i(135, 20);
+        glVertex2i(135, 28);
+        glVertex2i(131, 15);
+        glVertex2i(131, 45);
+        glVertex2i(135, 50);
+
+        glEnd();
+
+    //kadh
+        glColor3ub (153,76,0);
+        glBegin(GL_POLYGON);
+        glVertex2i(165, 50);
+        glVertex2i(170, 54);
+        glVertex2i(173, 54);
+        glVertex2i(173, 50);
+        glVertex2i(180, 50);
+
+        glEnd();
+
+
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(135, 50);
+        glVertex2i(165, 50);
+        glVertex2i(170, 54);
+        glVertex2i(173, 54);
+        glVertex2i(173, 50);
+        glVertex2i(180, 50);
+        glEnd();
+
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(180, 50);
+        glVertex2i(190, 35);
+        glVertex2i(187, 33);
+        glVertex2i(177, 35);
+        glVertex2i(172, 20);
+        glVertex2i(172, 15);
+        glVertex2i(168, 15);
+        glVertex2i(168, 28);
+        glVertex2i(168, 20);
+        glVertex2i(135, 20);
+        glVertex2i(135, 28);
+        glVertex2i(135, 15);
+        glVertex2i(131, 15);
+        glVertex2i(131, 45);
+        glVertex2i(135, 50);
+
+        glEnd();
+
+        //man IN CART
+        glColor3ub (0,0,0);//HAIR
+        glBegin(GL_QUADS);
+        glVertex2i(125, 80);
+        glVertex2i(137, 80);
+        glVertex2i(137, 76);
+        glVertex2i(125, 76);
+        glEnd();
+
+        //HEAD
+        glColor3ub (255,201,105);
+        glBegin(GL_POLYGON);
+        glVertex2i(137, 76);
+        glVertex2i(137, 72);
+        glVertex2i(140, 70);
+        glVertex2i(136, 68);
+        glVertex2i(135, 64);
+        glVertex2i(128, 64);
+        glVertex2i(125, 67);
+        glVertex2i(125, 76);
+        glEnd();
+
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+       glVertex2i(137, 76);
+        glVertex2i(137, 72);
+        glVertex2i(140, 70);
+        glVertex2i(136, 68);
+        glVertex2i(135, 64);
+        glVertex2i(128, 64);
+        glVertex2i(125, 67);
+        glVertex2i(125, 76);
+        glVertex2i(137, 76);
+        glEnd();
+
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(135, 64);
+        glVertex2i(135, 61);
+        glVertex2i(128, 61);
+        glVertex2i(128, 64);
+        glEnd();
+
+        glColor3ub (0,255,0);
+        glBegin(GL_POLYGON);
+        glVertex2i(135, 64);
+        glVertex2i(135, 61);
+        glVertex2i(128, 61);
+        glVertex2i(128, 64);
+
+        glEnd();
+
+    //BODY
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(125, 61);
+        glVertex2i(138, 61);
+        glVertex2i(138, 50);
+        glVertex2i(125, 50);
+        glVertex2i(125, 61);
+        glEnd();
+
+        glColor3ub (229,106,118);
+        glBegin(GL_POLYGON);
+        glVertex2i(125, 61);
+        glVertex2i(138, 61);
+        glVertex2i(138, 50);
+        glVertex2i(125, 50);
+        glVertex2i(125, 61);
+
+        glEnd();
+
+        //HANDS
+        glColor3ub (0,0,0);
+        glBegin(GL_LINE_STRIP);
+        glVertex2i(138, 57);
+        glVertex2i(145, 50);
+        glVertex2i(138, 55);
+
+        glEnd();
+
+
+        glTranslatef(43, 15, 0.0);
+        glTranslatef(43, 15, 0.0);
+        glBegin(GL_POLYGON);
     glColor3ub(156, 143, 6);
 	for(int i=0;i<500;i++)
 	{
@@ -2743,81 +2666,445 @@ glTranslatef(positionC,0.0f, 0.0f);
 
 }
 
+void Train()
+{
+    //Train
+    glPushMatrix();
+
+    glTranslatef(positionT,0.0f, 0.0f);
+    glColor3ub(198, 83, 83);
+    glBegin(GL_POLYGON);
+    glVertex2i(250, 320);
+    glVertex2i(500, 320);
+    glVertex2i(500, 325);
+    glVertex2i(495, 330);
+    glVertex2i(255, 330);
+    glVertex2i(250, 325);
+    glEnd();
+    glColor3ub(0, 0, 0);
+    glLineWidth(1);
+    glBegin(GL_LINE_STRIP);
+     glVertex2i(250, 320);
+    glVertex2i(500, 320);
+    glVertex2i(500, 325);
+    glVertex2i(495, 330);
+    glVertex2i(255, 330);
+    glVertex2i(250, 325);
+    glVertex2i(250, 320);
+    glEnd();
+
+
+     glColor3ub(255, 255, 102);//Train window
+    glBegin(GL_POLYGON);
+    glVertex2i(250, 325);
+    glVertex2i(500, 325);
+    glVertex2i(500, 327);
+    glVertex2i(495, 327);
+    glVertex2i(250, 327);
+    glEnd();
+    glColor3ub(198, 83, 83);//Train window divider
+    glLineWidth(3);
+    glBegin(GL_LINES);
+    glVertex2i(495, 325);
+    glVertex2i(495, 327);
+    glVertex2i(485, 325);
+    glVertex2i(485, 327);
+    glVertex2i(475, 325);
+    glVertex2i(475, 327);
+    glVertex2i(465, 325);
+    glVertex2i(465, 327);
+    glVertex2i(455, 325);
+    glVertex2i(455, 327);
+    glVertex2i(445, 325);
+    glVertex2i(445, 327);
+    glVertex2i(435, 325);
+    glVertex2i(435, 327);
+    glVertex2i(425, 325);
+    glVertex2i(425, 327);
+    glVertex2i(415, 325);
+    glVertex2i(415, 327);
+    glVertex2i(405, 325);
+    glVertex2i(405, 327);
+    glVertex2i(395, 325);
+    glVertex2i(395, 327);
+    glVertex2i(385, 325);
+    glVertex2i(385, 327);
+    glVertex2i(375, 325);
+    glVertex2i(375, 327);
+    glVertex2i(365, 325);
+    glVertex2i(365, 327);
+    glVertex2i(355, 325);
+    glVertex2i(355, 327);
+    glVertex2i(345, 325);
+    glVertex2i(345, 327);
+    glVertex2i(335, 325);
+    glVertex2i(335, 327);
+    glVertex2i(325, 325);
+    glVertex2i(325, 327);
+    glVertex2i(315, 325);
+    glVertex2i(315, 327);
+    glVertex2i(305, 325);
+    glVertex2i(305, 327);
+    glVertex2i(295, 325);
+    glVertex2i(295, 327);
+    glVertex2i(285, 325);
+    glVertex2i(285, 327);
+    glVertex2i(275, 325);
+    glVertex2i(275, 327);
+    glVertex2i(265, 325);
+    glVertex2i(265, 327);
+    glVertex2i(255, 325);
+    glVertex2i(255, 327);
+    glEnd();
+
+    glColor3ub(0, 0, 0);//Train Parts divider
+    glLineWidth(1);
+    glBegin(GL_LINES);
+    glVertex2i(465, 320);
+    glVertex2i(465, 330);
+    glVertex2i(425, 320);
+    glVertex2i(425, 330);
+    glVertex2i(385, 320);
+    glVertex2i(385, 330);
+    glVertex2i(345, 320);
+    glVertex2i(345, 330);
+    glVertex2i(305, 320);
+    glVertex2i(305, 330);
+    glVertex2i(265, 320);
+    glVertex2i(265, 330);
+    glEnd();
+    glPopMatrix();
+
+}
+
+void Bridge()
+{
+
+    //Bridge
+    glColor3ub(71, 107, 107);
+    glBegin(GL_QUADS);
+    glVertex2i(0, 315);
+    glVertex2i(640, 315);
+    glVertex2i(640, 320);
+    glVertex2i(0, 320);
+    glEnd();
+
+    glColor3ub(71, 107, 107);//1st Pillars
+    glBegin(GL_QUADS);
+    glVertex2i(370, 280);
+    glVertex2i(375, 280);
+    glVertex2i(375, 315);
+    glVertex2i(370, 315);
+    glEnd();
+    glColor3ub(71, 107, 107);
+    glLineWidth(2);
+    glBegin(GL_LINES);
+    glVertex2i(365, 315);
+    glVertex2i(370, 305);
+    glVertex2i(375, 305);
+    glVertex2i(380, 315);
+    glEnd();
+
+     glColor3ub(71, 107, 107);//2nd Pillars
+    glBegin(GL_QUADS);
+    glVertex2i(480, 280);
+    glVertex2i(485, 280);
+    glVertex2i(485, 315);
+    glVertex2i(480, 315);
+    glEnd();
+    glColor3ub(71, 107, 107);
+    glLineWidth(2);
+    glBegin(GL_LINES);
+    glVertex2i(475, 315);
+    glVertex2i(480, 305);
+    glVertex2i(485, 305);
+    glVertex2i(490, 315);
+    glEnd();
+
+    glColor3ub(71, 107, 107);//3rd Pillars
+    glBegin(GL_QUADS);
+    glVertex2i(590, 280);
+    glVertex2i(595, 280);
+    glVertex2i(595, 315);
+    glVertex2i(590, 315);
+    glEnd();
+    glColor3ub(71, 107, 107);
+    glLineWidth(2);
+    glBegin(GL_LINES);
+    glVertex2i(585, 315);
+    glVertex2i(590, 305);
+    glVertex2i(595, 305);
+    glVertex2i(600, 315);
+    glEnd();
+
+}
+
+void Hills()
+{
+    ///////// HILL
+    glColor3ub(102, 102, 0);//1st hill
+    glBegin(GL_TRIANGLES);
+    glVertex2i(-80, 275);
+    glVertex2i(20, 350);
+    glVertex2i(120, 275);
+    glEnd();
+    glColor3ub(0,0,0);
+    glLineWidth(1.5);
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(-80, 275);
+    glVertex2i(20, 350);
+    glVertex2i(120, 275);
+    glVertex2i(-80, 275);
+    glEnd();
+
+    glColor3ub(102, 102, 0);//2nd hill
+    glBegin(GL_TRIANGLES);
+    glVertex2i(10, 275);
+    glVertex2i(110, 350);
+    glVertex2i(200, 275);
+    glEnd();
+    glColor3ub(0,0,0);
+    glLineWidth(1.5);
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(10, 275);
+    glVertex2i(110, 350);
+    glVertex2i(200, 275);
+    glVertex2i(10, 275);
+    glEnd();
+
+    glColor3ub(153,153,0);//3rd hill
+    glBegin(GL_TRIANGLES);
+    glVertex2i(-30, 275);
+    glVertex2i(70, 360);
+    glVertex2i(170, 275);
+    glEnd();
+    glColor3ub(0,0,0);
+    glLineWidth(1.5);
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(-30, 275);
+    glVertex2i(70, 360);
+    glVertex2i(170, 275);
+    glVertex2i(-30, 275);
+    glEnd();
+
+    glColor3ub(153,153,0);//4th hill
+    glBegin(GL_TRIANGLES);
+    glVertex2i(60, 285);
+    glVertex2i(160, 370);
+    glVertex2i(250, 285);
+    glEnd();
+    glColor3ub(0,0,0);
+    glLineWidth(1.5);
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(60, 285);
+    glVertex2i(160, 370);
+    glVertex2i(250, 285);
+    glVertex2i(60, 285);
+    glEnd();
+
+    glColor3ub(153,153,0);//5th hill
+    glBegin(GL_TRIANGLES);
+    glVertex2i(100, 275);
+    glVertex2i(200, 350);
+    glVertex2i(300, 275);
+    glEnd();
+    glColor3ub(0,0,0);
+    glLineWidth(1.5);
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(100, 275);
+    glVertex2i(200, 350);
+    glVertex2i(300, 275);
+    glVertex2i(100, 275);
+    glEnd();
+
+    glColor3ub(153,153,0);//6th hill
+    glBegin(GL_TRIANGLES);
+    glVertex2i(180, 255);
+    glVertex2i(270, 320);
+    glVertex2i(360, 255);
+    glEnd();
+    glColor3ub(0,0,0);
+    glLineWidth(1.5);
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(180, 255);
+    glVertex2i(270, 320);
+    glVertex2i(360, 255);
+    glVertex2i(180, 255);
+    glEnd();
+    //glFlush();
+
+}
+
+
 void Bird()
 {
-    glPushMatrix();
-    glTranslatef(positionK,0.0f, 0.0f);
+        glPushMatrix();
+        glTranslatef(positionK,0.0f, 0.0f);
 
-    glColor3ub (230, 230, 0);
-    glBegin(GL_POLYGON);
-    glVertex2i(32, 408);
-    glVertex2i(45, 393);
-    glVertex2i(51, 393);
-    glVertex2i(55, 400);
-    glVertex2i(60, 401);
-    glVertex2i(54, 406);
-    glVertex2i(53, 406);
-    glVertex2i(52, 399);
-    glVertex2i(51, 399);
-    glVertex2i(46, 412);
-    glVertex2i(32, 410);
-    glVertex2i(44, 409);
-    glVertex2i(47, 407);
-    glVertex2i(48, 405);
-    glVertex2i(46, 405);
-    //glVertex2i(40, 403);
-    glEnd();
+        glColor3ub (230, 230, 0);
+        glBegin(GL_POLYGON);
+        glVertex2i(32, 408);
+        glVertex2i(45, 393);
+        glVertex2i(51, 393);
+        glVertex2i(55, 400);
+        glVertex2i(60, 401);
+        glVertex2i(54, 406);
+        glVertex2i(53, 406);
+        glVertex2i(52, 399);
+        glVertex2i(51, 399);
+        glVertex2i(46, 412);
+        glVertex2i(32, 410);
+        glVertex2i(44, 409);
+        glVertex2i(47, 407);
+        glVertex2i(48, 405);
+        glVertex2i(46, 405);
+        //glVertex2i(40, 403);
+        glEnd();
 
-    glBegin(GL_TRIANGLES);
-    glVertex2i(25, 400);
-    glVertex2i(45, 393);
-    glVertex2i(40, 400);
-    glEnd();
+        glBegin(GL_TRIANGLES);
+        glVertex2i(25, 400);
+        glVertex2i(45, 393);
+        glVertex2i(40, 400);
+        glEnd();
 
-    glColor3ub (0,0,0);//Bird's Eye
-    glBegin(GL_LINES);
-    glVertex2i(54, 403);
-    glVertex2i(53, 403);
-    glEnd();
+        glColor3ub (0,0,0);//Bird's Eye
+        glBegin(GL_LINES);
+        glVertex2i(54, 403);
+        glVertex2i(53, 403);
+        glEnd();
 
 
-    glColor3ub (102, 255, 51);
-    glBegin(GL_POLYGON);
-    glVertex2i(02, 398);
-    glVertex2i(15, 383);
-    glVertex2i(21, 383);
-    glVertex2i(25, 390);
-    glVertex2i(30, 391);
-    glVertex2i(24, 396);
-    glVertex2i(23, 396);
-    glVertex2i(22, 389);
-    glVertex2i(21, 389);
-    glVertex2i(16, 402);
-    glVertex2i(2, 400);
-    glVertex2i(14, 399);
-    glVertex2i(17, 397);
-    glVertex2i(18, 395);
-    glVertex2i(16, 395);
-    //glVertex2i(40, 403);
-    glEnd();
+        glColor3ub (102, 255, 51);
+        glBegin(GL_POLYGON);
+        glVertex2i(02, 398);
+        glVertex2i(15, 383);
+        glVertex2i(21, 383);
+        glVertex2i(25, 390);
+        glVertex2i(30, 391);
+        glVertex2i(24, 396);
+        glVertex2i(23, 396);
+        glVertex2i(22, 389);
+        glVertex2i(21, 389);
+        glVertex2i(16, 402);
+        glVertex2i(2, 400);
+        glVertex2i(14, 399);
+        glVertex2i(17, 397);
+        glVertex2i(18, 395);
+        glVertex2i(16, 395);
+        //glVertex2i(40, 403);
+        glEnd();
 
-    glBegin(GL_TRIANGLES);
-    glVertex2i(-5, 390);
-    glVertex2i(15, 383);
-    glVertex2i(10, 390);
-    glEnd();
+        glBegin(GL_TRIANGLES);
+        glVertex2i(-5, 390);
+        glVertex2i(15, 383);
+        glVertex2i(10, 390);
+        glEnd();
 
-    glColor3ub (0,0,0);//Bird's Eye
-    glBegin(GL_LINES);
-    glVertex2i(24, 393);
-    glVertex2i(23, 393);
-    glEnd();
+        glColor3ub (0,0,0);//Bird's Eye
+        glBegin(GL_LINES);
+        glVertex2i(24, 393);
+        glVertex2i(23, 393);
+        glEnd();
 
 
 
     glPopMatrix();
 
     glFlush ();
+}
+
+void TrainMove(int value) {
+
+    positionT += speedT;
+    if(positionT > 700)
+        positionT = -250 ;
+    else if(positionT < -250)
+        positionT = 660 ;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, TrainMove, 0);
+
+}
+
+
+void BirdMove(int value) {
+
+    //if(position > 1.0)
+        //position = -1.2f;
+
+    positionK += speedK;
+    if(positionK > 700)
+        positionK = -50;
+    //glutPostRedisplay();
+
+	glutTimerFunc(50, BirdMove, 0);
+	glutPostRedisplay();
+
+}
+
+void BoatMove(int value) {
+
+    positionB += speedB;
+
+    if(positionB > 550)
+        positionB = -200;
+    else if(positionB < -270)
+        positionB = 550 ;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, BoatMove, 0);
+}
+
+void WhiteMan(int value) {
+
+    //if(position > 1.0)
+        //position = -1.2f;
+
+    position += speed;
+    if(position < -210)
+        position = -210;
+        //glutPostRedisplay();
+
+        glutTimerFunc(100, WhiteMan, 0);
+        glutPostRedisplay();
+
+}
+
+void RedMan(int value) {
+
+    //if(position > 1.0)
+        //position = -1.2f;
+
+    positionR += speedR;
+
+    if(positionR < -201)
+        positionR = -201;
+    //glutPostRedisplay();
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, RedMan, 0);
+
+}
+
+void CART(int value) {
+    //if(position > 1.0)
+        //position = -1.2f;
+
+    positionC += speedC;
+    if(positionC > 700)
+        positionC = -50 ;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(50, CART, 0);
+
 }
 
 void update(int value) {
@@ -2847,10 +3134,10 @@ void rainf()
         a-=0.5f;
         //glColor3ub(r,g,b);
     }
-    glColor3ub(255,255,255);
-    glPushMatrix();
-    glTranslatef(0.0f,a,0.0f);
-    glBegin(GL_LINES);
+        glColor3ub(255,255,255);
+        glPushMatrix();
+        glTranslatef(0.0f,a,0.0f);
+        glBegin(GL_LINES);
     for(int i=500;i>=0;i--)
     {
         for(int j=0;j<=i;j++)
@@ -2863,18 +3150,18 @@ void rainf()
         x=0;
 
     }
-    glEnd();
-    glPopMatrix();
-    glutPostRedisplay();
+        glEnd();
+        glPopMatrix();
+        glutPostRedisplay();
 
 }
 void Night(int value){
 
 if(night){
-    glClearColor(0.0,0.0,0.0,0.0);
-    glutTimerFunc(5, Night, 0);
-    glFlush();
-	glutPostRedisplay();
+        glClearColor(0.0,0.0,0.0,0.0);
+        glutTimerFunc(5, Night, 0);
+        glFlush();
+        glutPostRedisplay();
 }
 if(rain){
         rainf();
@@ -2884,83 +3171,146 @@ if(rain){
 
 void startscreen(void)
 {
-    setFont(GLUT_BITMAP_TIMES_ROMAN_24);
-    glClearColor(0.000, 0.000, 0.000,0);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(0,1,0);
-    drawstring(100.0,350.0,0.0,"AMERICAN INTERNATIONAL UNIVERSITY-BANGLADESH");
-    glColor3f(0,0,1);
-    drawstring(100,325,0.0,"FACULTY OF COMPUTER SCIENCE AND ENGINEERING");
-    glColor3f(0.7,0.7,0.7);
-    drawstring(225,265,0.0,"PROJECT ON");
-    drawstring(125,250,0.0,"COMPUTER GRAPHICS: VILLAGE VIEW");
-    glColor3f(1,0.5,0);
-    drawstring(50,200,0.0,"SUBMITTED BY:");
-    glColor3f(1,1,1);
-    drawstring(50,185,0.0,"ZUBAIR AHMED                         (19-39745-1)");
-    drawstring(50,145,0.0,"MARUFUL AHMED SAKIL        (19-40038-1)");
-    drawstring(50,105,0.0,"LAMEYA RAHMAN                    (19-39795-1)");
-    drawstring(50,65,0.0,"MD. ASIF REZA SHAWON         (17-34335-1)");
-    glColor3f(1,1,1);
-    drawstring(350,185,0.0,"RITU BASAK    (19-40179-1)");
-    glColor3f(0,1,0);
-    drawstring(200,40,0.0,"PRESS ENTER TO START");
-    glFlush();
+        setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+        glClearColor(0.000, 0.000, 0.000,0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glColor3f(0,1,0);
+        drawstring(100.0,350.0,0.0,"AMERICAN INTERNATIONAL UNIVERSITY-BANGLADESH");
+        glColor3f(0,0,1);
+        drawstring(100,325,0.0,"FACULTY OF COMPUTER SCIENCE AND ENGINEERING");
+        glColor3f(0.7,0.7,0.7);
+        drawstring(225,265,0.0,"PROJECT ON");
+        drawstring(125,250,0.0,"COMPUTER GRAPHICS: VILLAGE VIEW");
+        glColor3f(1,0.5,0);
+        drawstring(50,200,0.0,"SUBMITTED BY:");
+        glColor3f(1,1,1);
+        drawstring(50,185,0.0,"ZUBAIR AHMED                         (19-39745-1)");
+        drawstring(50,145,0.0,"MARUFUL AHMED SAKIL        (19-40038-1)");
+        drawstring(50,105,0.0,"LAMEYA RAHMAN                    (19-39795-1)");
+        drawstring(50,65,0.0,"MD. ASIF REZA SHAWON         (17-34335-1)");
+        glColor3f(1,1,1);
+        drawstring(350,185,0.0,"RITU BASAK    (19-40179-1)");
+        glColor3f(0,1,0);
+        drawstring(200,40,0.0,"PRESS ENTER TO START");
+        glFlush();
 }
 void controlsScreen()
 {
-    setFont(GLUT_BITMAP_TIMES_ROMAN_24);
-    glClearColor(0.000, 0.000, 0.000,0);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(0.596, 0.984, 0.596);
-    drawstring(185.0,350.0,0.0,"INSTRUCTIONS");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(125.0,320.0,0.0,"DAY MODE");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(300.0,320.0,0.0,"PRESS 'B'");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(125.0,320.0,0.0,"DAY MODE");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(300.0,320.0,0.0,"PRESS 'B'");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(125.0,300.0,0.0,"NIGHT MODE");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(300.0,300.0,0.0,"PRESS 'N'");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(125.0,280.0,0.0,"RAIN");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(300.0,280.0,0.0,"PRESS 'R'");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(125.0,260.0,0.0,"NO RAIN");
-    glColor3f(1.000, 0.980, 0.941);
-    drawstring(300.0,260.0,0.0,"PRESS 'T'");
-    drawstring(180.0,100.0,0.0,"NOW PRESS ENTER");
-    glFlush();
+        setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+        glClearColor(0.000, 0.000, 0.000,0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glColor3f(0.596, 0.984, 0.596);
+        drawstring(185.0,400.0,0.0,"INSTRUCTIONS");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(125.0,360.0,0.0,"DAY MODE");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,360.0,0.0,"PRESS 'B'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,340.0,0.0,"NIGHT MODE");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,340.0,0.0,"PRESS 'N'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,320.0,0.0,"RAIN");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,320.0,0.0,"PRESS 'R'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,300.0,0.0,"NO RAIN");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,300.0,0.0,"PRESS  'T'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,280.0,0.0,"Move 1ST/2ND MAN");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,280.0,0.0,"PRESS 'Q'/'A'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,260.0,0.0,"STOP 1ST/2ND MAN");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,260.0,0.0,"PRESS 'S'/'W'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,240.0,0.0,"MOVE BIRD");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,240.0,0.0,"PRESS 'L'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,220.0,0.0,"STOP BIRD");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,220.0,0.0,"PRESS 'K'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,200.0,0.0,"MOVE CART");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,200.0,0.0,"PRESS 'Y'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,180.0,0.0,"STOP CART");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,180.0,0.0,"PRESS 'U'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,160.0,0.0,"MOVE TRAIN (RIGHT SIDE)");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,160.0,0.0,"PRESS 'G'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,140.0,0.0,"MOVE TRAIN (LEFT SIDE)");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,140.0,0.0,"PRESS 'D'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,120.0,0.0,"STOP TRAIN ");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,120.0,0.0,"PRESS 'F'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,100.0,0.0,"MOVE BOAT (RIGHT SIDE)");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,100.0,0.0,"PRESS 'V'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,80.0,0.0,"MOVE BOAT (LEFT SIDE)");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,80.0,0.0,"PRESS 'C'");
+        glColor3f(1.000, 0.980, 0.941);
+
+        drawstring(125.0,60.0,0.0,"STOP BOAT ");
+        glColor3f(1.000, 0.980, 0.941);
+        drawstring(300.0,60.0,0.0,"PRESS 'Z'");
+
+
+        drawstring(200.0,30.0,0.0,"NOW PRESS ENTER");
+
+        glFlush();
 }
 void display()
 {
-    BackVillage();
-    river();
-    //BackVillage();
-    Boat();
-    Boat2();
-    //grass();
-    Grass();
-    tree();
-    SmallJungle();
-    HouseRoad();
-    Straw();
-    house();
-    sun();
-    cloud();
-    //Grass();
-    Farm();
-    Human();
-    Human2();
-    Cart();
-    Bird();
-
-
+        sun();
+        Train();
+        Bridge();
+        Hills();
+        BackVillage();
+        river();
+        //BackVillage();
+        Boat();
+        Boat2();
+        //grass();
+        Grass();
+        tree();
+        SmallJungle();
+        HouseRoad();
+        Straw();
+        house();
+        cloud();
+        //Grass();
+        Farm();
+        Human();
+        Human2();
+        Cart();
+        Bird();
 
 }
 //Main Display Function
@@ -2992,41 +3342,60 @@ void myKeyboard(unsigned char key, int x, int y){
 	{
 
 
+case 's':
+        speed = 0.0f;
+        break;
 case 'a':
-    speed = 0.0f;
-    break;
-case 'w':
-    speed -= 0.4f;
-    glutPostRedisplay();
-    break;
+        speed -= 0.4f;
+        glutPostRedisplay();
+        break;
 case 'q':
-    speedR -= 0.4f;
-    glutPostRedisplay();
-    break;
-case 'e':
-    speedR = 0.0f;
-    break;
-case 'c':
-    speedB += 0.8f;
-    glutPostRedisplay();
-    break;
-case 'v':
-    speedB = 0.0f;
-    break;
-case 'y':   //c FOR CONTINUE MOVING CART
-    speedC += 0.4f;
-    glutPostRedisplay();
-    break;
+        speedR -= 0.4f;
+        glutPostRedisplay();
+        break;
+case 'w':
+        speedR = 0.0f;
+        break;
+case 'v'://Boat moving right
+        speedB += 0.8f;
+        glutPostRedisplay();
+        break;
+case 'z'://Stop Boat moving
+        speedB = 0.0f;
+        break;
+case 'c'://Boat moving left
+        speedB -= 0.8f;
+        glutPostRedisplay();
+        break;
+case 'y':   // MOVING CART
+        speedC += 0.4f;
+        glutPostRedisplay();
+        break;
 case 'u':   //u FOR STOP MOVING CART
-    speedC = 0.0f;
-    break;
+        speedC = 0.0f;
+        break;
 case 'k':   //u FOR STOP MOVING Bird
-    speedK = 0.0f;
-    break;
+        speedK = 0.0f;
+        sndPlaySound(NULL,SND_ASYNC);
+        break;
 case 'l':
-    speedK += 2;
-    glutPostRedisplay();
-    break;
+        speedK += 2;
+        sndPlaySound("birds.wav",SND_ASYNC|SND_LOOP);
+        sndPlaySound("birds.wav",SND_MEMORY|SND_ASYNC);
+        glutPostRedisplay();
+        break;
+case 'g'://Train moving right
+        speedT+= 2;
+        glutPostRedisplay();
+        break;
+case 'd'://Train moving left
+        speedT -= 2;
+        glutPostRedisplay();
+        break;
+case 'f'://Stop Train moving
+        speedT = 0;
+        glutPostRedisplay();
+        break;
 case 'r':
         rain = true;
         sndPlaySound("Rain.wav",SND_ASYNC|SND_LOOP);
@@ -3069,43 +3438,45 @@ case 'x':     // ESC key
     myDisplay();
 }
 
-/*case 'd':
-    position += 0.2;
-    glutPostRedisplay();
-    if(position > 1.5)
-        position = -1.2f;
-    glutPostRedisplay();
-
-    break;
-
-glutPostRedisplay();
-*/
-
 }
 
 int main(int argc,char **argv)
 {
-    cout<<"rain start = r"<<endl;
-    cout<<"rain stop = t"<<endl;
-    cout<<"night = n"<<endl;
-    cout<<"day = b"<<endl;
-    glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(1200, 600);
-	glutCreateWindow("Natural View Of A Village");     // creating the window
-	//glutFullScreen();       // making the window full screen
-	//glutInitWindowPosition(0,0);
-	glutDisplayFunc(myDisplay);
-	glutKeyboardFunc(myKeyboard);
+        cout<<"Night = n"<<endl;
+        cout<<"Day = b"<<endl;
+        cout<<"Rain start = r"<<endl;
+        cout<<"Rain stop = t"<<endl;
+        cout<<"1st/2nd Men Movement(Left) = q,a"<<endl;
+        cout<<"Stop 1st/2nd Men Movement = w,s"<<endl;
+        cout<<"Boat Movement(Right) = v"<<endl;
+        cout<<"Boat Movement(Left) = c"<<endl;
+        cout<<"Stop Boat Movement = z"<<endl;
+        cout<<"Train Movement(Right) = g"<<endl;
+        cout<<"Train Movement(Left) = d"<<endl;
+        cout<<"Stop Train Movement = f"<<endl;
+        cout<<"Bird Movement(Right) = l"<<endl;
+        cout<<"Stop Bird Movement = k"<<endl;
+        cout<<"Cart Movement(Right) = y"<<endl;
+        cout<<"Stop Cart Movement = u"<<endl;
+
+        glutInit(&argc, argv);
+        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+        glutInitWindowSize(1200, 600);
+        glutCreateWindow("Natural View Of A Village");     // creating the window
+        //glutFullScreen();       // making the window full screen
+        //glutInitWindowPosition(0,0);
+        glutDisplayFunc(myDisplay);
+        glutKeyboardFunc(myKeyboard);
         glutTimerFunc(1000, WhiteMan, 0);
         glutTimerFunc(1000, RedMan, 0);
         glutTimerFunc(1000, BoatMove, 0);
-        glutTimerFunc(100, CART, 0);
-        glutTimerFunc(100, BirdMove, 0);
+        glutTimerFunc(2000, CART, 0);
+        glutTimerFunc(2000, BirdMove, 0);
+        glutTimerFunc(100, TrainMove, 0);
 
-	glutTimerFunc(25, update, 0);
-	myInit();
-	glutMainLoop();
-	return 0;
+        glutTimerFunc(25, update, 0);
+        myInit();
+        glutMainLoop();
+        return 0;
 }
 
