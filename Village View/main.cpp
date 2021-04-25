@@ -24,10 +24,10 @@ GLfloat positionK = 10.0f;
 GLfloat positionT = 10.0f;
 GLfloat speed = -0.5f;
 GLfloat speedR = -0.5f;
-GLfloat speedB = -0.9f;
+GLfloat speedB = 1.2f;
 GLfloat speedC = 1.5f;
 GLfloat speedK = 0.8f;
-GLfloat speedT = 0.8f;
+GLfloat speedT = 2.0f;
 
 
 
@@ -478,7 +478,11 @@ glPushMatrix();
     glVertex2i(262, 275);
     glEnd();
 
-
+    glColor3ub (0, 0, 0);//Sailors eyes
+    glBegin(GL_LINES);
+    glVertex2i(257, 271);
+    glVertex2i(257, 272);
+    glEnd();
 
     //2nd BOAT
     /////////////////boat body
@@ -1865,6 +1869,7 @@ glPushMatrix();
     glVertex2i(236, 176);
     glVertex2i(238, 172);
     glEnd();
+
     glColor3ub (0, 0, 0);
     glLineWidth(1);
     glBegin(GL_LINE_STRIP);
@@ -1876,6 +1881,13 @@ glPushMatrix();
     glVertex2i(236, 176);
     glVertex2i(238, 172);
     glVertex2i(238, 172);
+    glEnd();
+
+     glColor3ub (0,0,0);//Eyes
+    glLineWidth(1.5);
+    glBegin(GL_LINES);
+    glVertex2i(238, 179);
+    glVertex2i(239, 179);
     glEnd();
     glColor3ub (26, 0, 26);//Hair
     glBegin(GL_POLYGON);
@@ -2043,6 +2055,13 @@ glPushMatrix();
     glVertex2i(206, 176);
     glVertex2i(208, 172);
     glVertex2i(208, 172);
+    glEnd();
+
+     glColor3ub (0,0,0);//Eyes
+    glLineWidth(1.5);
+    glBegin(GL_LINES);
+    glVertex2i(208, 179);
+    glVertex2i(209, 179);
     glEnd();
     glColor3ub (26, 0, 26);//Hair
     glBegin(GL_POLYGON);
@@ -2560,7 +2579,7 @@ glPopMatrix();
 
         glColor3ub (0,0,0);
         glBegin(GL_LINE_STRIP);
-       glVertex2i(137, 76);
+        glVertex2i(137, 76);
         glVertex2i(137, 72);
         glVertex2i(140, 70);
         glVertex2i(136, 68);
@@ -2585,8 +2604,14 @@ glPopMatrix();
         glVertex2i(135, 61);
         glVertex2i(128, 61);
         glVertex2i(128, 64);
-
         glEnd();
+
+        glColor3ub (0,0,0);//Eyes of the man in the cart
+        glBegin(GL_LINES);
+        glVertex2i(135, 70);
+        glVertex2i(135, 73);
+        glEnd();
+
 
     //BODY
         glColor3ub (0,0,0);
@@ -3479,4 +3504,3 @@ int main(int argc,char **argv)
         glutMainLoop();
         return 0;
 }
-
