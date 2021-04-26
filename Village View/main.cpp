@@ -355,7 +355,7 @@ void BackVillage()
 void Boat()
 {
 //BOAT
-    /////////////////boat body
+    //boat body
     glLineWidth(2);
     glColor3ub (102, 102, 255);
     glBegin(GL_LINES);
@@ -380,7 +380,7 @@ void Boat()
     glVertex2i(200, 205);
     glEnd();
 
-    /////////////////boat roof
+    //boat roof
     glColor3ub (255, 102, 51);
     glBegin(GL_QUADS);
     glVertex2i(220, 205);
@@ -429,7 +429,7 @@ void Boat()
     glEnd();
 
 
-    ////////////////////khuti and dori
+    //stick and rope
     glLineWidth(3);
     glColor3ub (153, 51, 0);
     //glBegin(GL_LINE);
@@ -1619,7 +1619,7 @@ void house(){
     glVertex2i(50, 200);
 
     glEnd();
-    //////////////line of chal
+    //line of Top
     glLineWidth(2);
     glColor3ub (0, 0, 0);
     glBegin(GL_LINES);
@@ -1627,7 +1627,7 @@ void house(){
     glVertex2i(75, 250);
 
     glEnd();
-    ///////////////////right  chal
+    //right Top
     glColor3ub (172, 57, 57);
     glBegin(GL_QUADS);
     glVertex2i(90, 200);
@@ -1646,7 +1646,7 @@ void house(){
     glEnd();
 
     //glFlush ();
-    ////////////////// left body
+    //left body
     glColor3ub (163, 163, 117);
     glBegin(GL_QUADS);
     glVertex2i(55, 150);
@@ -1666,7 +1666,7 @@ void house(){
     glEnd();
 
 
-    ///////////right body
+    //right body
     glColor3ub (173, 173, 133);
     glBegin(GL_QUADS);
     glVertex2i(90, 150);
@@ -1685,7 +1685,7 @@ void house(){
     glVertex2i(90, 150);
     glEnd();
 
-    ///////////////////right body janala (left)
+    //right body window
     glColor3ub (90, 90, 90);
     glBegin(GL_QUADS);
     glVertex2i(95, 160);
@@ -1704,7 +1704,7 @@ void house(){
     glVertex2i(95, 160);
     glEnd();
 
-    /////////////////////right body janala (right)
+    //right body window
     glColor3ub (90, 90, 90);
     glBegin(GL_QUADS);
     glVertex2i(145, 160);
@@ -1723,7 +1723,7 @@ void house(){
     glVertex2i(145, 160);
     glEnd();
 
-    ////////////left body janala
+    //left body window
     glColor3ub (90, 90, 90);
     glBegin(GL_QUADS);
     glVertex2i(65, 160);
@@ -1743,7 +1743,7 @@ void house(){
     glEnd();
 
     //glFlush ();
-    ////right body door
+    //right body door
     glColor3ub (90, 90, 90);
     glBegin(GL_QUADS);
     glVertex2i(120, 155);
