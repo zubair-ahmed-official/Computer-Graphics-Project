@@ -3441,7 +3441,9 @@ case 'n':
 
 case 'b':
         night = false;
-        sndPlaySound(NULL,SND_ASYNC);
+        sndPlaySound("sun.wav",SND_ASYNC|SND_LOOP);
+        sndPlaySound("sun.wav",SND_MEMORY|SND_ASYNC);
+        //sndPlaySound(NULL,SND_ASYNC);
         glClearColor(0.0,0.5,1.0,1.0);
         break;
 
